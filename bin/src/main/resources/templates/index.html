@@ -1,0 +1,45 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Time calculator</title>
+</head>
+<body>
+    <div class="container justify-content-center my-5 w-75">
+        <h1>Welcome to Time calculator!</h1>
+        <p class="my-3">Please select a pair of dates, and press start to calculate dates</p>
+        <form action="" method="post">
+            <!--DATE INPUTS-->
+            <div class="form-group w-25">
+                <label  for="Date">Start Date</label>
+                <input class="form-control" type="date" name="startdate" id="startDate">
+                </br>
+                <label  for="Date">End Date</label>
+                <input class="form-control" type="date" name="enddate" id="endDate">
+            </div>
+            <!--CHECKBOX INPUTS-->
+            <p class="my-4">Select the options you are interested to be shown.</p>
+            <div class="form-check my-4">
+                <input class="form-check-input" type="checkbox" name="optionsDays" id="days">
+                <label class="form-check-label" for="days">Days</label>
+                </br>
+                <input class="form-check-input" type="checkbox" name="optionsWeeks" id="weeks">
+                <label class="form-check-label" for="weeks">Weeks</label>
+                </br>
+                <input class="form-check-input" type="checkbox" name="optionsMonths" id="months">
+                <label class="form-check-label" for="months">Months</label>
+                </br>
+                <input class="form-check-input" type="checkbox" name="optionsYears" id="years">
+                <label class="form-check-label" for="years">Years</label>
+                </br>
+                <input class="form-check-input" type="checkbox" name="optionsAll" id="all">
+                <label class="form-check-label" for="all">Years + months + days</label>
+            </div>
+            </br>
+            <input  class="btn btn-info" type="submit" value="Submit" id="submit">
+        </form>
+    </div>
+</body>
+</html>
