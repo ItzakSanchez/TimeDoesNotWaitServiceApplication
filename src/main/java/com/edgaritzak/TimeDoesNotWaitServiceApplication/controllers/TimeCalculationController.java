@@ -34,6 +34,33 @@ public class TimeCalculationController {
 		model.addAttribute("optionsYears", optionsYears);
 		model.addAttribute("optionsAll", optionsAll);
 		if (service.validateCheckbox(optionsDays, optionsWeeks, optionsMonths, optionsYears, optionsAll)) { //IF AT LEAST ONE CHECKBOX IS SELECTED
+			if(optionsDays) {
+				int days =service.calculateDaysBetween(startDate, endDate);
+				model.addAttribute("days", days);
+			}
+			
+			if(optionsWeeks) {
+				int weeks =service.calculateWeeksBetween(startDate, endDate);
+				model.addAttribute("weeks", weeks);
+			}
+			
+			if(optionsMonths) {
+				int months =service.calculateMonthsBetween(startDate, endDate);
+				model.addAttribute("months", months);
+			}
+			
+			if(optionsYears) {
+				int years =service.calculateYearsBetween(startDate, endDate);
+				model.addAttribute("years", years);
+			}
+			
+			if(optionsAll) {
+				String DaysMonthsYears =service.calculateDaysMonthsYearsBetween(startDate, endDate);
+				String allDays =  DaysMonthsYears.split("/",3)[0];
+				String allMonths =  DaysMonthsYears.split("/",3)[1];
+				String allYears =  DaysMonthsYears.split("/",3)[2];
+				//model.addAttribute("days", days);
+			}
 			
 		} else {
 			model.addAttribute("errorMessage", "You must select at least 1 checkbox");
