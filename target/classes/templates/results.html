@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
@@ -7,15 +7,48 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Results</h1>
-    <p>Start Date</p>
-    <input type="date" name="" id="">
-    <br>
-    <p>End date</p>
-    <input type="date" name="" id="">
-    <hr>
-
-    <h2>Time between dates</h2>
-    
+	<div class="mx-5 my-2 w-50">
+	    <h1 class="display-4 my-4">Results</h1>
+	    <div class="container my-0 mx-5">
+			<div class="row ">
+				<div class="col col-md-4">
+					<p class="m-1">From</p>
+				</div>
+				<div class="col col-md-4">
+				    <p class="m-1">To</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col col-md-4">
+					<input class="form-control" type="date" name="startDate" id="startDate" disabled th:value="${startDate}">
+				</div>
+				<div class="col col-md-4">
+					<input class="form-control" name="endDate" id="endDate" disabled th:value="${endDate}">
+				</div>
+			</div>
+		</div>
+		<div class="card my-5">
+		    <h2 class="card-header">Time between dates</h2>
+			<div class="card-body">
+				<div th:if="${optionsDays == true}">
+					<p class="card-text">It is <span class="font-weight-bold" th:text="${days}"></span> <span class="font-weight-bold">days</span> from start date to the end date</p>
+				</div>
+				<div th:if="${optionsWeeks == true}">
+					<p class="card-text">Number of complete weeks between dates: <span class="font-weight-bold" th:text="${weeks}"></span> <span class="font-weight-bold">weeks</span></p>
+				</div>
+				<div th:if="${optionsMonths == true}">
+					<p class="card-text">Number of complete months between dates: <span class="font-weight-bold" th:text="${months}"></span> <span class="font-weight-bold">months</span></p>
+				</div>
+				<div th:if="${optionsYeras == true}">
+					<p class="card-text">The number of complete years between given dates are: <span class="font-weight-bold" th:text="${years}"></span> <span class="font-weight-bold">years</span></p>
+				</div>
+				<div th:if="${optionsAll == true}">
+					<p class="card-text">It is <span class="font-weight-bold" th:text="${allDays}"></span> <span class="font-weight-bold">days</span>, <span class="font-weight-bold" th:text="${allMonths}"></span> <span class="font-weight-bold">months</span> and <span class="font-weight-bold" th:text="${allYears}"></span> <span class="font-weight-bold">years</span> from start date to the end date.</p>
+				</div>
+			</div>
+		</div>
+		
+		<p>Return to <a th:href="@{/}">home page</a>.</p>
+	</div>
 </body>
 </html>
