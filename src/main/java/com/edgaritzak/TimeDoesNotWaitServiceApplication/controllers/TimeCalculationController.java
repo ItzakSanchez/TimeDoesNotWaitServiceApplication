@@ -29,13 +29,6 @@ public class TimeCalculationController {
 			@RequestParam(value= "optionsYears", required = false) boolean optionsYears,
 			@RequestParam(value= "optionsAll", required = false) boolean optionsAll) {	
 		
-
-		System.out.println("StartDate: "+startDate);
-		System.out.println("EndDate: "+endDate);
-		
-		System.out.println("StartDate: "+service.parseDateddMMyyyy(startDate));
-		System.out.println("EndDate: "+service.parseDateddMMyyyy(endDate));
-		
 		model.addAttribute("startDate", startDate);
 		model.addAttribute("endDate", endDate);
 		

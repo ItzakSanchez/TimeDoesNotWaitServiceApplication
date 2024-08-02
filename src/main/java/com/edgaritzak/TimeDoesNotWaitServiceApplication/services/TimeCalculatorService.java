@@ -53,10 +53,6 @@ public class TimeCalculatorService {
 	}
 	
 	public int calculateDaysBetween(String startDate, String endDate){
-		//
-		// DATEFORMAT  1998-10-30
-		//
-		//dd/mm/yyyy
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		LocalDateTime date1 = LocalDate.parse(startDate, dtf).atStartOfDay();
 		LocalDateTime date2 = LocalDate.parse(endDate, dtf).atStartOfDay();
@@ -71,6 +67,7 @@ public class TimeCalculatorService {
 		long dateDiff = ChronoUnit.WEEKS.between(date1,date2);
 		return (int) dateDiff;
 	}
+	
 	public int calculateMonthsBetween(String startDate, String endDate){
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		LocalDateTime date1 = LocalDate.parse(startDate, dtf).atStartOfDay();
@@ -78,6 +75,7 @@ public class TimeCalculatorService {
 		float dateDiff = ChronoUnit.MONTHS.between(date1,date2);
 		return (int) dateDiff;
 	}
+	
 	public int calculateYearsBetween(String startDate, String endDate){
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		LocalDateTime date1 = LocalDate.parse(startDate, dtf).atStartOfDay();
@@ -85,6 +83,7 @@ public class TimeCalculatorService {
 		float dateDiff = ChronoUnit.YEARS.between(date1,date2);
 		return (int) dateDiff;
 	}
+	
 	public String calculateDaysMonthsYearsBetween(String startDate, String endDate){
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		LocalDate date1 = LocalDate.parse(startDate, dtf);
@@ -92,5 +91,4 @@ public class TimeCalculatorService {
 		Period periodDiff = Period.between(date1,date2);
 		return periodDiff.getDays()+"/"+periodDiff.getMonths()+"/"+periodDiff.getYears();
 	}
-	
 }
